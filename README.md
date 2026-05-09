@@ -10,17 +10,17 @@ This project demonstrates the full embedded ML pipeline: sensor integration → 
 
 ### Why This Matters
 Edge AI inference on resource-constrained hardware is critical for:
-- **Low latency** — No cloud dependency, instant local processing
-- **Privacy** — Data never leaves the device
-- **Battery efficiency** — Inference runs in milliseconds
-- **Scalability** — Deploy to millions of devices without server load
+- **Low latency**   No cloud dependency, instant local processing
+- **Privacy**   Data never leaves the device
+- **Battery efficiency**  Inference runs in milliseconds
+- **Scalability**  Deploy to millions of devices without server load
 
 ### Gestures (5-class Classification)
-- **SHAKE** — Rapid back-and-forth motion
-- **SWIPE** — Quick side-to-side motion  
-- **TAP** — Tilted knock motion
-- **CIRCLE** — Rotate hand in circle
-- **DOUBLE_TAP** — Two quick taps in succession
+- **SHAKE**   Rapid back-and-forth motion
+- **SWIPE**   Quick side-to-side motion  
+- **TAP**   Tilted knock motion
+- **CIRCLE**   Rotate hand in circle
+- **DOUBLE_TAP**   Two quick taps in succession
 
 ### Technical Stack
 - **Hardware**: Arduino Nesso N1 (ESP32-C6 @ 160 MHz, 512 KB SRAM)
@@ -44,8 +44,8 @@ Edge AI inference on resource-constrained hardware is critical for:
 - Accessibility interfaces with gesture commands
 
 ### Files
-- `sketch_may8c.ino` — Data collection & inference firmware
-- `gesture_training_data.xlsx` — Labeled training dataset (500+ samples)
+- `sketch_may8c.ino`   Data collection & inference firmware
+- `gesture_training_data.xlsx`  Labeled training dataset (500+ samples)
 - `README.md`
 
 ### Future Aim
