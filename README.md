@@ -1,8 +1,10 @@
 # Real-Time Gesture Recognition on Embedded Hardware 
  
-A gesture recognition system that runs directly on the Arduino Nesso N1 microcontroller. The device captures motion data from its built-in BMI270 IMU, processes it locally using a CNN model, and identifies gestures (shake, tap, swipe, circle, double-tap) in real-time. All processing happens on the device itself—no cloud connection, no latency, no privacy concerns.
- 
-The system uses accelerometer and gyroscope data from the BMI270 sensor to capture hand motion. A pre-trained convolutional neural network processes the sensor stream and outputs gesture predictions on the built-in display in real-time.
+# Real-Time Gesture Recognition
+
+An embedded AI project built on Arduino Nesso N1 that recognizes gestures in real time. Swipe, shake, tap, or slash in front of the sensor, and the device instantly detects and displays the gesture with no noticeable delay.
+
+Designed to run fully on-device, the system performs all processing locally without relying on the internet or cloud services, enabling fast and responsive interaction in real time.
  
 **For full project specifications, architecture, model details, and training results, see the project documentation.**
 
