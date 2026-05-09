@@ -1,59 +1,44 @@
-### Gesture Recognition on Embedded Hardware
-### Real-time ML Inference on Arduino Nesso N1
+# Gesture Recognition on Embedded Hardware
 
-### Overview
-Built a complete end-to-end gesture recognition system using TensorFlow Lite Micro on the Arduino Nesso N1. 
+## What This Project Does
+A real-time gesture recognition system that runs directly on the Arduino Nesso N1 microcontroller. The device captures motion data from its built-in sensors, processes it locally using machine learning, and identifies gestures (shake, tap, swipe, circle, double-tap) in real-time.
 
-The device captures 6-axis motion data, classifies gestures in real-time with <100ms latency, and displays results on the integrated touchscreen all within a microcontroller with 512 KB SRAM.
+All processing happens on the device itself—no cloud connection needed, no latency, no privacy concerns.
 
-This project demonstrates the full embedded ML pipeline: sensor integration → data collection → model training → quantization → deployment → real-time inference.
+## Why It Matters
+Most AI systems rely on cloud servers, which creates latency and privacy risks. This project demonstrates **edge AI**: running intelligent models directly on small devices. This approach is essential for:
 
-### Why This Matters
-Edge AI inference on resource-constrained hardware is critical for:
-- **Low latency**: No cloud dependency, instant local processing
-- **Privacy**: Data never leaves the device
-- **Battery efficiency**: Inference runs in milliseconds
-- **Scalability**: Deploy to millions of devices without server load
+- Real-time responsiveness (no network delays)
+- Privacy (data stays on your device)
+- Battery efficiency (local processing uses less power than cloud connectivity)
+- Reliability (works offline)
 
-### Gestures (5-class Classification)
-- **SHAKE**: Rapid back-and-forth motion
-- **SWIPE**: Quick side-to-side motion  
-- **TAP**: Tilted knock motion
-- **CIRCLE**: Rotate hand in circle
-- **DOUBLE_TAP**: Two quick taps in succession
+## How It Works
+1. **Sensor captures motion** — 6-axis motion data from BMI270 IMU
+2. **Model processes data locally** — TensorFlow Lite Micro runs inference on device
+3. **Gesture is recognized** — Result displayed in ~80 milliseconds
+4. **Repeat** — Ready for next gesture
 
-### Technical Stack
-- **Hardware**: Arduino Nesso N1 (ESP32-C6 @ 160 MHz, 512 KB SRAM)
-- **Sensor**: BMI270 6-axis Inertial Measurement Unit (accelerometer + gyroscope)
-- **Framework**: TensorFlow Lite Micro
-- **Model**: Quantized Convolutional Neural Network (~50 KB, int8)
-- **Sampling**: 20 Hz IMU capture
-- **Inference Latency**: ~80ms per gesture
+## Real-World Applications
+- **Smart Wearables** — Gesture-controlled smartwatches or fitness trackers
+- **IoT Devices** — Motion-based interaction without touchscreens
+- **Accessibility** — Gesture commands for people with limited mobility
+- **Vehicle Interfaces** — Hand gestures for in-car control (relevant for driving simulators)
+- **Robotics** — Real-time gesture recognition for robot interaction
 
-### Data Pipeline
-1. **Collection**: 1000+ samples per gesture @ 20 Hz (CSV format)
-2. **Training**: Convolutional Neural Network model trained on motion time-series data
-3. **Optimization**: Post-training int8 quantization (4x size reduction, 2x faster inference)
-4. **Deployment**: TFLite Micro model embedded in Arduino firmware
-5. **Inference**: Real-time classification on device, <100ms latency
+## Future: Cloud-Based Retraining
+The current system uses a fixed model. The next phase will add **cloud retraining**:
 
-### Applications
-- Smart wearables with gesture control
-- IoT devices with motion-based interaction
-- Vehicle interfaces (relevant for simulators requiring real-time gesture recognition)
-- Accessibility interfaces with gesture commands
+1. **Device collects new gesture data** over time
+2. **Data is anonymized and uploaded to cloud**
+3. **Model is retrained monthly** with new data
+4. **Updated model is downloaded back to device**
+5. **Recognition accuracy improves over time**
 
-### Files
-- `sketch_may8c.ino`; Data collection & inference firmware
-- `gesture_training_data.xlsx`: Labeled training dataset (500+ samples)
-- `README.md`
+This creates a **feedback loop**: the device learns from real-world usage while maintaining privacy through local processing.
 
-### Future Aim
-- Federated learning with cloud retraining pipeline
-
-**Skills Demonstrated**
-- Embedded systems programming (C++)
-- Sensor integration (I2C IMU)
-- Machine learning model optimization
-- Real-time inference on microcontrollers
-- Hardware-constrained algorithm design
+## Technical Details
+- Microcontroller: Arduino Nesso N1 (ESP32-C6, 512 KB RAM)
+- Sampling Rate: 20 Hz
+- Model Type: Quantized CNN (~50 KB)
+- Inference Speed: <100ms per gesture
