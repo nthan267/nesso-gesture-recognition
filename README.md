@@ -1,7 +1,7 @@
 # Real-Time Gesture Recognition on Embedded Hardware 
  
 
-An embedded Machine Learning project built on Arduino Nesso N1 that recognizes gestures in real time. Swipe, shake, tap, or slash in front of the sensor, and the device instantly detects and displays the gesture with no noticeable delay.
+An embedded Machine Learning project built on Arduino Nesso N1 that recognizes gestures in real time. Swipe, shake, tap, or slash and the device instantly detects and displays the gesture with no noticeable delay.
 
 Designed to run fully on-device, the system performs all processing locally without relying on the internet or cloud services, enabling fast and responsive interaction in real time.
  
