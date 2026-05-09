@@ -4,7 +4,8 @@
 ### Overview
 Built a complete end-to-end gesture recognition system using TensorFlow Lite Micro on the Arduino Nesso N1. 
 
-The device captures 6-axis motion data, classifies gestures in real-time with <100ms latency, and displays results on the integrated touchscreen—all within a microcontroller with 512 KB SRAM.
+The device captures 6-axis motion data, classifies gestures in real-time with <100ms latency, and displays results on the integrated touchscreen all within a microcontroller with 512 KB SRAM.
+
 This project demonstrates the full embedded ML pipeline: sensor integration → data collection → model training → quantization → deployment → real-time inference.
 
 ### Why This Matters
